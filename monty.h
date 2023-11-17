@@ -7,7 +7,7 @@
 #include <ctype.h>
 
 #define UNUSED(x) (void)(x)
-#define DELIM " \n\t\r"
+#define DELIM " \n\t\r$"
 #define BUFFSIZE 1024
 
 /**
