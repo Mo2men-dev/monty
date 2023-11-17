@@ -71,3 +71,29 @@ void pall(stack_t **stack, unsigned int line_number)
 	pall(&temp->next, line_number);
 	printf("%d\n", temp->n);
 }
+
+/**
+ * pint - prints the value at the top of the stack
+ * @stack: pointer to the stack
+ * @line_number: line number of the opcode
+ * Return: void
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = NULL;
+
+	temp = *stack;
+
+	if (temp == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	while (temp->next != NULL)
+	{
+		temp = temp->next;
+	}
+
+	printf("%d\n", temp->n);
+}

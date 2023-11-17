@@ -13,13 +13,12 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0, i = 0;
 
 	stack_t *stack = NULL;
-	instruction_t opcodes[] = {{"push", push}, {"pall", pall}, {NULL, NULL}};
+	instruction_t opcodes[] = {{"push", push}, {"pall", pall}
+	, {"pint", pint}, {NULL, NULL}};
 
 	buffer = malloc(sizeof(char) * BUFFSIZE);
 	if (argc != 2)
-	{
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
-	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
